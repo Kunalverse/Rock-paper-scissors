@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <style>
+        .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .Box{
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+        }
+        .col{
+            display: block;
+            padding: 0 25px 0 25px;
+            color: aliceblue;
+        }
+        .heading{
+            display: inline;
+            color :aliceblue;
+            font-size: 60px;
+            font-weight: 1000;
+            padding: 0;
+        }
+        .box-item{
+            display: block;
+            margin: 50px;
+            width:100px;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background-color: green;
+            color: aliceblue;
+            border: 5px none green;
+            text-align: center;
+        }
+        #restartBtn{
+            display: none;
+            width:100px;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background-color: green;
+            color: aliceblue;
+            border: 5px none green;
+        }
+    </style>
+</head>
+<body style="background-color: rgba(8, 8, 252, 0.897);" class="center">
+    <div>
+        <p class="heading">Rock Paper Scissor</p>
+    </div>
+    <div class="Box">
+       <div class="col" >
+          <h2>Player</h2>
+          <h2 id="player">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h2>
+       </div>
+       <div class="col" >
+         <h2>Computer</h2>
+         <h2 id="computer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h2>
+       </div>
+    </div>
+    <div id="gDisplay"style="color:aliceblue ; padding-top: 50px;">
+        <h1>Choose your move</h1>
+        <p id="moves">&emsp;&emsp;&emsp;&emsp;&emsp;Moves left: 10</p>
+    </div>
+    <div class="Box " id="selectBtn">
+        <button class="box-item" id="rock" onclick="getRock()">Rock</button>
+        <button class="box-item" id="paper" onclick="getPaper()">Paper</button>
+        <button class="box-item" id="scissors" onclick="getScissors()">Scissors</button>
+    </div>
+    <div id="result" style="margin-top: -40px;">
+        <h3></h3>
+    </div>
+    <button id="restartBtn"></button>
+    <script src="rockps.js"></script>
+    
+</body>
+</html>
