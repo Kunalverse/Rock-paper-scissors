@@ -11,6 +11,15 @@ body {
     background-image: linear-gradient(#ABC7FF, #C9BDFF);
 }
 
+button {
+    transition: width 800ms;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 .heading-container {
     margin: 0 2rem;
 }
