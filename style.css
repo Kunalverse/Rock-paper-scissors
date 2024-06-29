@@ -1,166 +1,246 @@
-
 * {
-    font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-image: linear-gradient(#ABC7FF, #C9BDFF);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(#abc7ff, #c9bdff);
+  margin: 0;
 }
 
 button {
-    transition: width 800ms;
+  transition: width 800ms;
 }
 
 button:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .heading-container {
-    margin: 0 2rem;
+  margin: 0 2rem;
 }
-.heading{
-    color :#858BFF ;
-    font-size: 2rem;
-    font-weight: 1000;
-    padding: 0;
-    margin: 1rem 0 ;
-    /* -webkit-text-stroke: 0.05rem ; */
+.heading {
+  color: #858bff;
+  font-size: 2rem;
+  font-weight: 1000;
+  padding: 0;
+  margin: 1rem 0;
+  /* -webkit-text-stroke: 0.05rem ; */
 }
 
 .main-container {
-    display: flex;
-    margin: 2rem;
-    width: calc(100%-4rem);
-    height: 100vh;
+  display: flex;
+  margin: 2rem;
+  width: calc(100%-4rem);
+  height: 100vh;
 }
 
-.score-board-container{
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff37;
-    width: 30%;
-    border-radius: 1rem;
+.score-board-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff37;
+  width: 30%;
+  border-radius: 1rem;
 }
 .score-board-container > h2 {
-    text-align: center;
-    color: #858BFF;
+  text-align: center;
+  color: #858bff;
 }
 
-.col{
-    width: 80%;
-    text-align: center;
-    color: #7c83fe;
-    border-radius: 1rem;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.306);
-    font-size: 1.5rem;
-    padding: 0.5rem 0;
+.col {
+  width: 80%;
+  text-align: center;
+  color: #7c83fe;
+  border-radius: 1rem;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.306);
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
 }
 
 .col > p {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .score-count {
-    text-align: center;
-    font-size: larger;
+  text-align: center;
+  font-size: larger;
 }
 
-#restartBtn{
-    margin: auto;
-    width:8rem;
-    padding: 1rem 0;
-    background-color: #858BFF;
-    font-size: large;
-    color: rgb(248, 248, 248);
-    border: 0.1rem solid #858BFF;
-    border-radius: 0.5rem;
+#restartBtn {
+  margin: auto;
+  width: 8rem;
+  padding: 1rem 0;
+  background-color: #858bff;
+  font-size: large;
+  color: rgb(248, 248, 248);
+  border: 0.1rem solid #858bff;
+  border-radius: 0.5rem;
 }
 
-.game-area-container{
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff37;
-    margin-left: 3rem;
-    width: 70%;
-    border-radius: 1rem;
+.game-area-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff37;
+  margin-left: 3rem;
+  width: 70%;
+  border-radius: 1rem;
 }
 
 .option-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.option-button{
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 2rem;
-    background-color: #858BFF;
-    width: 6rem;
-    color: #fefefe;
-    border: 0.1rem solid #858BFF;
-    text-align: center;
-    font-size: 1rem;
+.option-button {
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: #858bff;
+  width: 6rem;
+  color: #fefefe;
+  border: 0.1rem solid #858bff;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .game-area {
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
 }
 
-.player-image, .computer-image {
-    width: 8rem;
-    text-align: center;
+.player-image,
+.computer-image {
+  width: 8rem;
+  text-align: center;
 }
 
 .player-side {
-    display: none;
-    font-size: large;
-    text-align: center;
+  display: none;
+  font-size: large;
+  text-align: center;
 }
 
 .player-image {
-    position: relative;
-    animation: slide-right 1s ease-out;
+  position: relative;
+  animation: slide-right 1s ease-out;
 }
 
-
 @keyframes slide-right {
-    from {
-        transform: translateX(-10%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .computer-image {
-    position: relative;
-    animation: slide-left 1s ease-out;
+  position: relative;
+  animation: slide-left 1s ease-out;
 }
 
 @keyframes slide-left {
-    from {
-        transform: translateX(10%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.result-div {
+  display: flex;
+  align-items: center;
 }
 
 #result {
-    margin: auto;
-    font-size: 2rem;
+  margin: auto;
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .heading-container {
+    margin: 0 1rem;
+  }
+  .main-container {
+    flex-direction: column;
+    height: auto;
+    margin: 1rem;
+    width: calc(100%-2rem);
+  }
+
+  body {
+    height: auto;
+    overflow: auto;
+    width: 100%;
+  }
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .score-board-container {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .col {
+    width: 60%;
+    margin-bottom: 0.5rem;
+  }
+
+  .col > p {
+    font-size: 1.5rem;
+  }
+
+  .game-area-container {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    height: 20rem;
+  }
+
+  .option-button {
+    width: 6rem;
+    padding: 0.6rem;
+    margin: 1rem;
+    font-size: 1rem;
+  }
+
+  #restartBtn {
+    width: 7rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #moves {
+    font-size: 1rem;
+  }
+
+  #result {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .player-image,
+  .computer-image {
+    width: 4rem;
+  }
 }
