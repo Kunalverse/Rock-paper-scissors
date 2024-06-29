@@ -1,62 +1,51 @@
 var rock = document.getElementById('rock');
 var paper = document.getElementById('paper');
 var scissors = document.getElementById('scissors');
+const imgUrl = [
+    'assests/rock.png',
+    'assests/paper.png',
+    'assests/scissors.png'
+]
 rock.value=0;
 paper.value=1;
 scissors.value=2;
 
-var count=10;
+var count=0;
 var pcount=0;
 var ccount=0;
 function updatePlayer(){
     pcount++;
-    document.getElementById('player').innerHTML=`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${pcount}`;
+    document.getElementById('player').innerHTML=`${pcount}`;
 }
 function updateComputer(){
     ccount++;
-    document.getElementById('computer').innerHTML=`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${ccount}`;
+    document.getElementById('computer').innerHTML=`${ccount}`;
 }
 
-function changeDisplay(){
-    document.getElementById('gDisplay').innerHTML=`<div id="gDisplay">
-    <h1 style="color:aliceblue">Game Over!!</h1>
-</div>`
-    if(pcount > ccount){
-        document.getElementById('gDisplay').innerHTML +=`<h1 style="color : green;">&nbsp;&nbsp;&nbsp;You Won!!</h1> `
-    }
-    else if(pcount == ccount){
-        document.getElementById('gDisplay').innerHTML +=`<h1 style="color : aliceblue;"> Match Tied!!</h1> `
-    }
-    else{
-        document.getElementById('gDisplay').innerHTML +=`<h1 style="color : red;">&nbsp;&nbsp;You Lose!!</h1> `
-    }
-
-    document.getElementById('rock').remove();
-    document.getElementById('paper').remove();
-    document.getElementById('scissors').remove();
-    document.getElementById('result').remove();
-    const reloadBtn = document.getElementById('restartBtn');
-    reloadBtn.innerText='Restart';
-    reloadBtn.style.display='flex';
-    reloadBtn.addEventListener('click',()=>{
-        window.location.reload();
-    })
-}
 function checkCount(){
-    if(count>1){
-        count--;
-    document.getElementById('moves').innerHTML=`&emsp;&emsp;&emsp;&emsp;&emsp;Moves left: ${count}`
-    }
-    else{
-        count--;
-    if(count==0){
-        changeDisplay();
-    }
-    }
+    count++
+    document.getElementById('moves').innerHTML=`Games Played: ${count}`
 }
 
 function checkVal(val){
     let comp=Math.floor(Math.random()*3);
+    document.getElementsByClassName('player-side')[0].style.display="block";
+    document.getElementsByClassName('player-side')[1].style.display="block";
+    document.getElementById('player-side').src = imgUrl[val];
+            document.getElementById('computer-side').src = imgUrl[comp];
+
+            const playerImage = document.getElementById('player-side');
+            const computerImage = document.getElementById('computer-side');
+
+            playerImage.classList.remove('player-image');
+            computerImage.classList.remove('computer-image');
+
+            void playerImage.offsetWidth;
+            void computerImage.offsetWidth;
+
+            playerImage.classList.add('player-image');
+            computerImage.classList.add('computer-image');
+
 
     if(val==comp){
         document.getElementsByTagName('h3')[0].style.color="aliceblue";
@@ -68,7 +57,7 @@ function checkVal(val){
         updatePlayer();
     }
     else{
-        document.getElementsByTagName('h3')[0].style.color="aliceblue";
+        document.getElementsByTagName('h3')[0].style.color="red";
       document.getElementsByTagName('h3')[0].innerHTML =`Computer Won`;
       updateComputer();
     }
@@ -82,4 +71,8 @@ function getPaper(){
 }
 function getScissors(){
     checkVal(2);
+}
+
+function handleReset(){
+    if(count > 0) window.location.reload();
 }

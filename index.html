@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap"
+      rel="stylesheet"
+    />
     <title>Rock Paper Scissor</title>
-</head>
-<body style="background-color: rgba(8, 8, 252, 0.897);" class="center">
-    <div>
-        <p class="heading">Rock Paper Scissor</p>
+  </head>
+  <body>
+    <div class="heading-container">
+      <p class="heading">Rock Paper Scissor</p>
     </div>
-    <div class="Box">
-       <div class="col" >
-          <h2>Player</h2>
-          <h2 id="player">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h2>
-       </div>
-       <div class="col" >
-         <h2>Computer</h2>
-         <h2 id="computer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h2>
-       </div>
+    <div class="main-container">
+      <div class="score-board-container">
+        <h2>Score-Board</h2>
+        <div class="col">
+          <p>Player</p>
+          <p id="player">0</p>
+        </div>
+        <div class="col">
+          <p>Computer</p>
+          <p id="computer">0</p>
+        </div>
+        <div class="score-count">
+          <p id="moves">Games Played: 0</p>
+        </div>
+        <button id="restartBtn" onclick="handleReset()">Reset</button>
+      </div>
+      <div class="game-area-container">
+        <div class="option-container" id="selectBtn">
+          <button class="option-button" id="rock" onclick="getRock()">
+            Rock
+          </button>
+          <button class="option-button" id="paper" onclick="getPaper()">
+            Paper
+          </button>
+          <button class="option-button" id="scissors" onclick="getScissors()">
+            Scissors
+          </button>
+        </div>
+        <div class="game-area">
+            <div class="player-side">
+                <p>You</p>
+                <img src="assests/paper.png" alt="" class="player-image" id="player-side">
+            </div>
+            <div id="result">
+                <h3></h3>
+            </div>
+            <div class="player-side">
+                <p>Computer</p>
+                <img src="assests/rock.png" alt="" class="computer-image" id="computer-side">
+            </div>
+        </div>
+      </div>
     </div>
-    <div id="gDisplay"style="color:aliceblue ; padding-top: 50px;">
-        <h1>Choose your move</h1>
-        <p id="moves">&emsp;&emsp;&emsp;&emsp;&emsp;Moves left: 10</p>
-    </div>
-    <div class="Box " id="selectBtn">
-        <button class="box-item" id="rock" onclick="getRock()">Rock</button>
-        <button class="box-item" id="paper" onclick="getPaper()">Paper</button>
-        <button class="box-item" id="scissors" onclick="getScissors()">Scissors</button>
-    </div>
-    <div id="result" style="margin-top: -40px;">
-        <h3></h3>
-    </div>
-    <button id="restartBtn"></button>
     <script src="rockps.js"></script>
-    
-</body>
+  </body>
 </html>
